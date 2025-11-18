@@ -5,6 +5,10 @@ services:
     container_name: remotely
     ports:
       - "8200:5000"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_HTTP_PORTS=5000      
     volumes:
-      - ./remotely-data:/remotely-data
+      - ./remotely-data:/app/AppData
     restart: unless-stopped
+
